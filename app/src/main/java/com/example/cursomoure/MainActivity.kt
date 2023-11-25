@@ -21,6 +21,9 @@ class MainActivity : AppCompatActivity() {
        //Log.i(TAG,funciones(3,null))
        // classes()
        // enumClass()
+       // nestedAndInnerClasses()
+        classInheritance()
+
     }
 
 
@@ -55,7 +58,7 @@ class MainActivity : AppCompatActivity() {
     fun arrays(){
 
         val name= "augusto"
-        val lastName= "basaury"
+        val lastName= "asdsad"
         val age= "35"
 
         val arreglo = arrayListOf<String>()
@@ -79,7 +82,7 @@ class MainActivity : AppCompatActivity() {
     fun maps(){
 
         val name= "augusto"
-        val lastName= "basaury"
+        val lastName= "asdsad"
         val age= "35"
 
         var myMap: Map<String,Int> = mapOf()
@@ -184,5 +187,34 @@ class MainActivity : AppCompatActivity() {
         Log.e(TAG,userDirection.ordinal.toString())
         //posicion del enum
     }
+    //clases anidadas podes tener una clase dentro de otra
+
+    private fun nestedAndInnerClasses() {
+
+      /*  val myNestedClass = MyNestedAndInnerClass.MyNestedClass().sum(3,4)
+        Log.e(TAG,myNestedClass.toString())*/
+
+        //estamos  instanciando MyInnerclass se puede hacer directamente
+        //dejando que el ide infiera el tipo de dato o tambien especificandolo
+        // val myInnerClass: MyNestedAndInnerClass.MyInnerClass = MyNestedAndInnerClass().MyInnerClass()
+        val myInnerClass = MyNestedAndInnerClass().MyInnerClass()
+        val sumTwo = myInnerClass.sumTwo(5)
+        Log.e(TAG, myInnerClass.sumTwo(5).toString())
+
+    }
+
+
+    private fun classInheritance(){
+        val programmer= Programmer("juan",25)
+        programmer.work()
+        programmer.goToWork()
+                val designer = Designer("pedro", 32)
+        designer.work()
+        designer.goToWork()
+    }
+
+
+    //https://www.youtube.com/watch?v=AgzTSQC1rsg&list=PLNdFk2_brsReZeIQ1-2r783GWus0ZZ5io&index=15
+
 
 }
